@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Angry Bird</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="600" height="800"></canvas>
+        <div id="gameUI">
+            <div id="score">Score: 0</div>
+            <div id="highScore">High Score: 0</div>
+            <div id="powerUpStatus">
+                <div id="shieldStatus" class="power-up-indicator hidden">🛡️ Shield</div>
+                <div id="speedStatus" class="power-up-indicator hidden">🚀 Speed</div>
+                <div id="slowStatus" class="power-up-indicator hidden">⏰ Slow</div>
+            </div>
+            <div id="gameOver" class="hidden">
+                <h2>GAME OVER</h2>
+                <p>Press SPACE, Click, or Tap to restart</p>
+            </div>
+            <div id="instructions" class="hidden">
+                <h3>How to Play</h3>
+                <p>Press SPACE, Click, or Tap to flap</p>
+                <p>Avoid buildings and arrows!</p>
+                <p>Collect power-ups: 🛡️Shield 🚀Speed ⏰Slow</p>
+                <p>Press C to choose bird character</p>
+            </div>
+            <div id="characterSelect" class="hidden">
+                <h2>Choose Your Bird</h2>
+                <div class="bird-selection">
+                    <div class="bird-option" data-bird="red">
+                        <div class="bird-preview red-bird"></div>
+                        <h3>Red Bird</h3>
+                        <p class="ability">Standard flight</p>
+                        <p class="description">Classic angry bird with balanced stats</p>
+                    </div>
+                    <div class="bird-option" data-bird="blue">
+                        <div class="bird-preview blue-bird"></div>
+                        <h3>Blue Bird</h3>
+                        <p class="ability">Light weight</p>
+                        <p class="description">Slower fall, gentler flap for precise control</p>
+                    </div>
+                    <div class="bird-option" data-bird="yellow">
+                        <div class="bird-preview yellow-bird"></div>
+                        <h3>Yellow Bird</h3>
+                        <p class="ability">Speed boost</p>
+                        <p class="description">Faster fall but powerful flap for quick movement</p>
+                    </div>
+                    <div class="bird-option" data-bird="black">
+                        <div class="bird-preview black-bird"></div>
+                        <h3>Black Bird</h3>
+                        <p class="ability">Explosive power</p>
+                        <p class="description">Standard stats with explosive particle effects</p>
+                    </div>
+                </div>
+                <p class="select-instruction">Click on a bird to select, then press SPACE to start!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio elements -->
+    <audio id="flapSound" preload="auto">
+        <source src="assets/flap.wav" type="audio/wav">
+    </audio>
+    <audio id="crashSound" preload="auto">
+        <source src="assets/crash.wav" type="audio/wav">
+    </audio>
+    <audio id="pigLaughSound" preload="auto">
+        <source src="assets/piglaugh.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
